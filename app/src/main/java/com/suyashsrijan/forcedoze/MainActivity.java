@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     boolean isDumpPermGranted = false;
     boolean isWriteSecureSettingsPermGranted = false;
     boolean ignoreLockscreenTimeout = true;
-    boolean showDonateDevDialog = true;
+    boolean showDonateDevDialog = false;
     SwitchCompat toggleForceDozeSwitch;
     MaterialDialog progressDialog = null;
     TextView textViewStatus;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         CustomTabs.with(getApplicationContext()).warm();
         settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         isDozeEnabledByOEM = Utils.checkForAutoPowerModesFlag();
-        showDonateDevDialog = settings.getBoolean("showDonateDevDialog1", true);
+        showDonateDevDialog = settings.getBoolean("showDonateDevDialog1", false);
         serviceEnabled = settings.getBoolean("serviceEnabled", false);
         isDozeDisabled = settings.getBoolean("isDozeDisabled", false);
         isSuAvailable = settings.getBoolean("isSuAvailable", false);
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             cl.getFullLogDialog().show();
         } else {
             if (showDonateDevDialog) {
-                showDonateDevDialog();
+            Log.i(TAG, "Skipping donate dialog");
             }
         }
     }
@@ -283,9 +283,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         switch (id) {
             case R.id.action_toggle_doze:
                 showEnableDozeOnUnsupportedDeviceDialog();
-                break;
-            case R.id.action_donate_dev:
-                openDonatePage();
                 break;
             case R.id.action_doze_batterystats:
                 startActivity(new Intent(MainActivity.this, DozeBatteryStatsActivity.class));
