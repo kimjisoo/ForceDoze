@@ -22,10 +22,4 @@
         android:orderInCategory="100"
         android:title="Doze tunables"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/action_doze_more_info"
-        android:icon="@drawable/ic_info_outline_white_24dp"
-        android:orderInCategory="100"
-        android:title="@string/more_info_menu_item"
-        app:showAsAction="always"/>
 </menu>
