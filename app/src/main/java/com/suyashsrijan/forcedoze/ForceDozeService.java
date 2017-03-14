@@ -275,6 +275,7 @@ public class ForceDozeService extends Service {
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setPriority(1)
                         .setContentIntent(intent)
+                        .setColor(0)
                         .setOngoing(false).build();
                 NotificationManager notificationManager =
                         (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -588,6 +589,7 @@ public class ForceDozeService extends Service {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(-2)
                 .setContentIntent(intent)
+                .setColor(0)
                 .setOngoing(true).build();
         startForeground(1234, n);
     }
@@ -603,6 +605,7 @@ public class ForceDozeService extends Service {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(-2)
                 .setContentIntent(intent)
+                .setColor(0)
                 .setOngoing(true).build();
         startForeground(1234, n);
     }

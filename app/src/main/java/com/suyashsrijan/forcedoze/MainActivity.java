@@ -290,9 +290,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             case R.id.action_app_settings:
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 break;
-            case R.id.action_doze_more_info:
-                showMoreInfoDialog();
-                break;
             case R.id.action_show_doze_tunables:
                 showDozeTunablesActivity();
                 break;
